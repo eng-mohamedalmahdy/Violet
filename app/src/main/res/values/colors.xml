@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#b5076b</color>
+    <color name="colorPrimaryDark">#45046a</color>
+    <color name="colorAccent">#03DAC5</color>
+    <color name="c_purple_45046a">#45046a</color>
+    <color name="c_purple_5c2a9d">#5c2a9d</color>
+    <color name="c_pink_b5076b">#b5076b</color>
+    <color name="c_sugar_f1ebbb">#f1ebbb</color>
+    <color name="c_pink_ffeef4">#ffeef4</color>
+
+</resources>

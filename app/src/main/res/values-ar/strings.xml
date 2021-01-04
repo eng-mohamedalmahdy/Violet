@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">بنفسج</string>
+    <string name="diary_title">Diary title</string>
+    <string name="tell_me_your_note">Tell me your note</string>
+    <string name="invalid_title">Write another title</string>
+    <string name="not_found">Note not found</string>
+</resources>

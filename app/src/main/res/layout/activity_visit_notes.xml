@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/c_sugar_f1ebbb"
+    tools:context=".ui.activities.VisitNotesActivity">
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_50sdp"
+        android:background="@color/c_pink_b5076b"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/edit_save"
+        android:layout_width="@dimen/_50sdp"
+        android:layout_height="@dimen/_50sdp"
+        android:background="@color/c_pink_b5076b"
+        android:foreground="?attr/selectableItemBackgroundBorderless"
+        android:src="@drawable/ic_baseline_edit_24"
+        android:tint="#ffffff"
+        app:iconTint="#ffffff"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/delete"
+        android:layout_width="@dimen/_50sdp"
+        android:layout_height="@dimen/_50sdp"
+        android:background="@color/c_pink_b5076b"
+        android:foreground="?attr/selectableItemBackgroundBorderless"
+        android:src="@drawable/ic_baseline_delete_24"
+        android:tint="#ffffff"
+        app:iconTint="#ffffff"
+        app:layout_constraintEnd_toStartOf="@id/edit_save"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/title_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/c_purple_5c2a9d"
+        android:hint="@string/diary_title"
+        android:textColorHint="@color/c_purple_5c2a9d"
+        app:boxBackgroundColor="@color/c_sugar_f1ebbb"
+        app:boxStrokeColor="@color/c_purple_5c2a9d"
+        app:boxStrokeWidth="@dimen/_4sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edit_save"
+        app:layout_constraintVertical_bias="0">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/note_title"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/caveat_regular"
+            android:imeOptions="actionSearch"
+            android:inputType="text"
+            android:textColor="@color/c_purple_5c2a9d"
+            android:textSize="@dimen/_24sdp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/content_container"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="@dimen/_4sdp"
+        android:backgroundTint="@color/c_purple_5c2a9d"
+        android:focusable="false"
+        android:gravity="top"
+        android:hint="@string/tell_me_your_note"
+        android:textColorHint="@color/c_purple_5c2a9d"
+        app:boxBackgroundColor="@color/c_sugar_f1ebbb"
+        app:boxStrokeColor="@color/c_purple_5c2a9d"
+        app:boxStrokeWidth="@dimen/_4sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title_container"
+        app:layout_constraintVertical_bias="0">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/note_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/caveat_regular"
+            android:gravity="top"
+            android:imeOptions="actionSearch"
+            android:inputType="text"
+            android:textColor="@color/c_purple_5c2a9d"
+            android:textSize="@dimen/_24sdp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
