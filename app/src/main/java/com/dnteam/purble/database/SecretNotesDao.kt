@@ -12,9 +12,13 @@ interface SecretNotesDao {
     @Query("SELECT * FROM note WHERE title = :title")
     suspend fun getNote(title: String): Note
 
+    @Query("SELECT title from note")
+    suspend fun getAllKeys(): List<String>
+
     @Query(value = "UPDATE note SET title =:newTitle , content = :content WHERE title = :oldTitle ")
     suspend fun updateNote(oldTitle: String, newTitle: String, content: String): Int
 
     @Query("DELETE FROM  note WHERE title = :title")
     suspend fun deleteNote(title: String)
+
 }

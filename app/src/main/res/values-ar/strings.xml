@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">بنفسج</string>
-    <string name="diary_title">Diary title</string>
-    <string name="tell_me_your_note">Tell me your note</string>
-    <string name="invalid_title">Write another title</string>
-    <string name="not_found">Note not found</string>
+    <string name="diary_title">عنوان المذكرات</string>
+    <string name="tell_me_your_note">قولي مذكرتك</string>
+    <string name="invalid_title">اكتب مذكرة تانية</string>
+    <string name="not_found">مش لاقي المذكرة</string>
+    <string name="key_location_saved">تم تسجيل مكان المفتاح</string>
+    <string name="password">Password</string>
+    <string name="key">key</string>
+    <string name="copied_to_clipboard">Copied to Clipboard</string>
+    <string name="create_password">Create Password</string>
+
 </resources>
