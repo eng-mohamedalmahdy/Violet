@@ -10,6 +10,11 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="@dimen/_2sdp"
+        android:textColor="@color/c_purple_45046a"
+        android:textColorHint="@color/c_purple_45046a"
+        app:boxStrokeColor="@color/c_purple_45046a"
+        app:endIconTint="@color/c_purple_45046a"
+        app:boxStrokeWidth="@dimen/_3sdp"
         app:endIconMode="password_toggle"
         app:layout_constraintEnd_toStartOf="@id/copy_to_clipboard"
         app:layout_constraintStart_toStartOf="parent"
@@ -19,15 +24,18 @@
             android:id="@+id/key"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:hint="@string/key"
             android:enabled="false"
+            android:hint="@string/key"
             android:inputType="none"
+            android:textColor="@color/c_purple_45046a"
+            android:textColorHint="@color/c_purple_45046a"
             app:passwordToggleEnabled="true" />
 
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <ImageButton
+        android:tint="@color/c_purple_45046a"
         android:id="@+id/copy_to_clipboard"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

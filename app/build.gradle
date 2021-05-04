@@ -1,9 +1,11 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
+apply plugin: 'androidx.navigation.safeargs.kotlin'
+
 
 android {
-    compileSdkVersion 29
+    compileSdkVersion 30
     buildToolsVersion "29.0.3"
 
     defaultConfig {
@@ -26,6 +28,10 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
+    buildFeatures{
+        dataBinding true
+    }
 }
 
 dependencies {
@@ -44,12 +50,14 @@ dependencies {
 
 
     //room implementation
-    def room_version = "2.2.5"
+    def room_version = "2.3.0"
+    def nav_version = "2.3.5"
+
 
     implementation "androidx.room:room-runtime:$room_version"
     annotationProcessor "android.arch.persistence.room:compiler:1.1.1"
     annotationProcessor "androidx.room:room-compiler:$room_version"
-    kapt "androidx.room:room-compiler:2.2.5"
+    kapt "androidx.room:room-compiler:$room_version"
     // For Kotlin use kapt instead of annotationProcessor
 
     // optional - Kotlin Extensions and Coroutines support for Room
@@ -66,7 +74,12 @@ dependencies {
 
 
     //implementation coroutines
-    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.8'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.2'
+
+
+    // Kotlin
+    implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
+    implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
 
 }
 repositories {

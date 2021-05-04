@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/app_navigation"
+    app:startDestination="@id/splashFragment">
+
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.dnteam.violet.ui.fragments.SplashFragment"
+        android:label="SplashFragment"
+        tools:layout="@layout/fragment_splash">
+        <action
+            android:id="@+id/action_splashFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:enterAnim="@anim/slide_in"
+            app:popUpTo="@+id/app_navigation"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.dnteam.violet.ui.fragments.HomeFragment"
+        android:label="HomeFragment"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_visitNotesFragment"
+            app:destination="@id/visitNotesFragment"
+            app:enterAnim="@anim/zoom_in"
+            app:popExitAnim="@anim/zoom_out">
+            <argument
+                android:name="note"
+                app:argType="com.dnteam.violet.models.Note" />
+        </action>
+        <action
+            android:id="@+id/action_homeFragment_to_addSecretNoteFragment"
+            app:destination="@id/addSecretNoteFragment"
+            app:enterAnim="@anim/zoom_in"
+            app:popExitAnim="@anim/zoom_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/visitNotesFragment"
+        android:name="com.dnteam.violet.ui.fragments.VisitNotesFragment"
+        android:label="VisitNotesFragment"
+        app:enterAnim="@anim/zoom_in"
+        tools:layout="@layout/fragment_visit_notes">
+
+        <argument
+            android:name="note"
+            app:argType="com.dnteam.violet.models.Note" />
+    </fragment>
+    <fragment
+        android:id="@+id/addSecretNoteFragment"
+        android:name="com.dnteam.violet.ui.fragments.AddSecretNoteFragment"
+        android:label="AddSecretNoteFragment"
+        tools:layout="@layout/fragment_add_secret_note" />
+</navigation>

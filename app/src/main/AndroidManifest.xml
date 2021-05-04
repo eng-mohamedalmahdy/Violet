@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.dnteam.purble">
+    package="com.dnteam.violet">
 
     <application
         android:allowBackup="true"
@@ -9,16 +9,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.activities.VisitNotesActivity"></activity>
-        <activity android:name=".ui.activities.AddSecretNoteActivity" />
-        <activity android:name=".ui.activities.HomeActivity" />
-        <activity android:name=".ui.activities.SplashActivity">
+
+        <activity android:name="com.dnteam.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".ui.fragments.VisitNotesFragment" />
+        <activity android:name=".ui.fragments.AddSecretNoteFragment" />
+
     </application>
 
 </manifest>
