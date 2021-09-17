@@ -1,4 +1,4 @@
-package com.dnteam.violet.database
+package com.dnteam.violet.data.database
 
 import android.content.Context
 import androidx.room.Database

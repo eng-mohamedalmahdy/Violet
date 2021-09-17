@@ -5,37 +5,33 @@ import android.os.Parcelable
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import java.io.Serializable
 
 @Entity(tableName = "note")
 data class Note(
-        @PrimaryKey
-        @ColumnInfo(name = "title")
-        var noteTitle: String
+    @PrimaryKey
+    @ColumnInfo(name = "title")
+    var noteTitle: String,
 
+    @ColumnInfo(name = "content")
+    var noteContent: String
+) : Parcelable {
+    constructor(parcel: Parcel) : this(
+        parcel.readString().toString(),
+        parcel.readString().toString()
+    )
 
-        ,@ColumnInfo(name = "content")
-        var noteContent: String):Parcelable {
-        constructor(parcel: Parcel) : this(
-                parcel.readString()!!,
-                parcel.readString()!!)
-
-        override fun writeToParcel(parcel: Parcel, flags: Int) {
-                parcel.writeString(noteTitle)
-                parcel.writeString(noteContent)
+    override fun writeToParcel(parcel: Parcel, flags: Int) =
+        with(parcel) {
+            writeString(noteTitle)
+            writeString(noteContent)
         }
 
-        override fun describeContents(): Int {
-                return 0
-        }
 
-        companion object CREATOR : Parcelable.Creator<Note> {
-                override fun createFromParcel(parcel: Parcel): Note {
-                        return Note(parcel)
-                }
+    override fun describeContents() = 0
 
-                override fun newArray(size: Int): Array<Note?> {
-                        return arrayOfNulls(size)
-                }
-        }
+    companion object CREATOR : Parcelable.Creator<Note> {
+        override fun createFromParcel(parcel: Parcel) = Note(parcel)
+        override fun newArray(size: Int) = arrayOfNulls<Note>(size)
+    }
+
 }

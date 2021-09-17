@@ -18,8 +18,8 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".ui.fragments.VisitNotesFragment" />
-        <activity android:name=".ui.fragments.AddSecretNoteFragment" />
+        <activity android:name=".ui.fragments.shownote.ShowNoteFragment" />
+        <activity android:name=".ui.fragments.addnote.AddSecretNoteFragment" />
 
     </application>
 

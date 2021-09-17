@@ -11,9 +11,10 @@ import android.widget.EditText
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.dnteam.violet.R
-import com.dnteam.violet.adapters.KeysListAdapter
-import com.dnteam.violet.database.NotesDatabase
-import com.dnteam.violet.util.getPassword
+import com.dnteam.violet.ui.adapters.KeysListAdapter
+import com.dnteam.violet.data.database.NotesDatabase
+import com.dnteam.violet.domain.getPassword
+import com.dnteam.violet.models.Note
 import kotlinx.coroutines.*
 
 class KeysDialog(context: Context) : Dialog(context) {
@@ -29,30 +30,28 @@ class KeysDialog(context: Context) : Dialog(context) {
 
         password = findViewById(R.id.password)
         keysList = findViewById(R.id.keys_list)
-        keysList.layoutManager = LinearLayoutManager(ownerActivity, LinearLayoutManager.VERTICAL, false)
+        keysList.layoutManager =
+            LinearLayoutManager(ownerActivity, LinearLayoutManager.VERTICAL, false)
 
         CoroutineScope(Dispatchers.Main).launch {
-            val res = withContext(Dispatchers.IO) {
-                val notes = NotesDatabase.getDatabase(context)!!.notesDao()!!.getAllKeys()
-                withContext(Dispatchers.Main) {
-                    keysList.adapter = KeysListAdapter(notes)
-                    (keysList.adapter as KeysListAdapter).notifyDataSetChanged()
-                }
+            withContext(Dispatchers.IO) {
+                val notes: List<String> =
+                    NotesDatabase.getDatabase(context)?.notesDao()?.getAllKeys() ?: emptyList()
+                withContext(Dispatchers.Main) { keysList.adapter = KeysListAdapter(notes) }
             }
-
         }
 
         password.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable?) {
-                if (s.toString() == context.getPassword() && context.getPassword().isNotEmpty()) keysList.visibility = View.VISIBLE
-
+                if (s.toString() == context.getPassword() && context.getPassword().isNotEmpty())
+                    keysList.visibility = View.VISIBLE
             }
 
-            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
-            }
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                if (s == context.getPassword() && context.getPassword().isNotEmpty()) keysList.visibility = View.VISIBLE
+                if (s == context.getPassword() && context.getPassword().isNotEmpty())
+                    keysList.visibility = View.VISIBLE
             }
 
         })

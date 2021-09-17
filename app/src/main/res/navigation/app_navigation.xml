@@ -19,7 +19,7 @@
     </fragment>
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.dnteam.violet.ui.fragments.HomeFragment"
+        android:name="com.dnteam.violet.ui.fragments.home.HomeFragment"
         android:label="HomeFragment"
         tools:layout="@layout/fragment_home">
         <action
@@ -39,10 +39,10 @@
     </fragment>
     <fragment
         android:id="@+id/visitNotesFragment"
-        android:name="com.dnteam.violet.ui.fragments.VisitNotesFragment"
+        android:name="com.dnteam.violet.ui.fragments.shownote.ShowNoteFragment"
         android:label="VisitNotesFragment"
         app:enterAnim="@anim/zoom_in"
-        tools:layout="@layout/fragment_visit_notes">
+        tools:layout="@layout/fragment_show_note">
 
         <argument
             android:name="note"
@@ -50,7 +50,7 @@
     </fragment>
     <fragment
         android:id="@+id/addSecretNoteFragment"
-        android:name="com.dnteam.violet.ui.fragments.AddSecretNoteFragment"
+        android:name="com.dnteam.violet.ui.fragments.addnote.AddSecretNoteFragment"
         android:label="AddSecretNoteFragment"
         tools:layout="@layout/fragment_add_secret_note" />
 </navigation>

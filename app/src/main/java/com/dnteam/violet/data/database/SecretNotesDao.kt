@@ -1,4 +1,4 @@
-package com.dnteam.violet.database
+package com.dnteam.violet.data.database
 
 import androidx.room.*
 import com.dnteam.violet.models.Note

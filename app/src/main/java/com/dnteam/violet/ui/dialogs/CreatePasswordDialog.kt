@@ -6,7 +6,7 @@ import android.os.Bundle
 import android.widget.EditText
 import android.widget.ImageButton
 import com.dnteam.violet.R
-import com.dnteam.violet.util.setPassword
+import com.dnteam.violet.domain.setPassword
 
 class CreatePasswordDialog(context: Context) : Dialog(context) {
 
