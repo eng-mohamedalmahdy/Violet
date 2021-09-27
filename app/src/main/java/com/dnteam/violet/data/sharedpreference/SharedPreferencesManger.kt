@@ -1,4 +1,4 @@
-package com.dnteam.violet.domain
+package com.dnteam.violet.data.sharedpreference
 
 import android.content.Context
 import android.content.SharedPreferences

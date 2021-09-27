@@ -8,7 +8,7 @@ import com.dnteam.violet.models.Note
 
 @Database(entities = [Note::class], version = 1, exportSchema = false)
 abstract class NotesDatabase : RoomDatabase() {
-    abstract fun notesDao(): SecretNotesDao?
+    abstract fun notesDao(): SecretNotesDao
 
     companion object {
 
@@ -18,9 +18,11 @@ abstract class NotesDatabase : RoomDatabase() {
             if (INSTANCE == null) {
                 synchronized(NotesDatabase::class.java) {
                     if (INSTANCE == null) {
-                        INSTANCE = Room.databaseBuilder(context.applicationContext,
-                                NotesDatabase::class.java, "notes_database")
-                                .build()
+                        INSTANCE = Room.databaseBuilder(
+                            context.applicationContext,
+                            NotesDatabase::class.java, "notes_database"
+                        )
+                            .build()
                     }
                 }
             }

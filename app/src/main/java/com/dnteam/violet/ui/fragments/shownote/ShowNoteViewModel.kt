@@ -1,26 +1,31 @@
 package com.dnteam.violet.ui.fragments.shownote
 
-import android.content.Context
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
-import com.dnteam.violet.data.database.NotesDatabase
-import com.dnteam.violet.domain.stringContent
-import com.dnteam.violet.models.Note
-import com.google.android.material.textfield.TextInputLayout
+import android.app.Application
+import androidx.lifecycle.*
+import com.dnteam.violet.data.database.SecretNotesDao
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class ShowNoteViewModel : ViewModel() {
-    suspend fun updateNote(context: Context, oldTitle: String, note: Note) =
-        NotesDatabase.getDatabase(context)?.notesDao()?.updateNote(
-            oldTitle,
-            note.noteTitle, note.noteContent
-        )
+@HiltViewModel
+class ShowNoteViewModel @Inject constructor(application: Application) :
+    AndroidViewModel(application) {
 
-    fun deleteNote(context: Context, title: String) {
+
+    @Inject
+    lateinit var notesDao: SecretNotesDao
+
+    val noteTitle: MutableLiveData<String> = MutableLiveData()
+    val noteBody: MutableLiveData<String> = MutableLiveData()
+
+
+    fun updateNote(oldTitle: String) =
         viewModelScope.launch {
-            NotesDatabase.getDatabase(context)?.notesDao()
-                ?.deleteNote(title)
+            notesDao.updateNote(oldTitle, noteTitle.value ?: "", noteBody.value ?: "")
         }
-    }
+
+
+    fun deleteNote(title: String) =
+        viewModelScope.launch { notesDao.deleteNote(title) }
 
 }

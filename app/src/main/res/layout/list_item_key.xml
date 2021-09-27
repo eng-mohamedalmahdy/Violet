@@ -1,50 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/password"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="@dimen/_2sdp"
-        android:textColor="@color/c_purple_45046a"
-        android:textColorHint="@color/c_purple_45046a"
-        app:boxStrokeColor="@color/c_purple_45046a"
-        app:endIconTint="@color/c_purple_45046a"
-        app:boxStrokeWidth="@dimen/_3sdp"
-        app:endIconMode="password_toggle"
-        app:layout_constraintEnd_toStartOf="@id/copy_to_clipboard"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+    <data>
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/key"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:enabled="false"
-            android:hint="@string/key"
-            android:inputType="none"
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/password"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_2sdp"
             android:textColor="@color/c_purple_45046a"
             android:textColorHint="@color/c_purple_45046a"
-            app:passwordToggleEnabled="true" />
+            app:boxStrokeColor="@color/c_purple_45046a"
+            app:boxStrokeWidth="@dimen/_3sdp"
+            app:endIconMode="password_toggle"
+            app:endIconTint="@color/c_purple_45046a"
+            app:layout_constraintEnd_toStartOf="@id/copy_to_clipboard"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/key"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:enabled="false"
+                android:hint="@string/key"
+                android:inputType="none"
+                android:textColor="@color/c_purple_45046a"
+                android:textColorHint="@color/c_purple_45046a"
+                app:passwordToggleEnabled="true" />
 
 
-    </com.google.android.material.textfield.TextInputLayout>
+        </com.google.android.material.textfield.TextInputLayout>
 
-    <ImageButton
-        android:tint="@color/c_purple_45046a"
-        android:id="@+id/copy_to_clipboard"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/_4sdp"
-        android:background="#00000000"
-        android:scaleType="centerCrop"
-        android:src="@drawable/ic_baseline_content_copy_24"
-        app:layout_constraintBottom_toBottomOf="@id/password"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/password" />
+        <ImageButton
+            android:id="@+id/copy_to_clipboard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_4sdp"
+            android:background="#00000000"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_baseline_content_copy_24"
+            app:tint="@color/c_purple_45046a"
+            app:layout_constraintBottom_toBottomOf="@id/password"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/password" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

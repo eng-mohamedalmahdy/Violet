@@ -7,6 +7,6 @@
     <string name="key_location_saved">Key Location saved</string>
     <string name="password">Password</string>
     <string name="key">key</string>
-    <string name="copied_to_clipboard">Copied to Clipboard</string>
+    <string name="copied">Copied to Clipboard</string>
     <string name="create_password">Create Password</string>
 </resources>

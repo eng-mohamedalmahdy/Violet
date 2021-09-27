@@ -9,28 +9,29 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.dnteam.violet.R
-import com.dnteam.violet.data.database.NotesDatabase
 import com.dnteam.violet.databinding.FragmentShowNoteBinding
 import com.dnteam.violet.domain.stringContent
 import com.dnteam.violet.models.Note
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.*
 
+@AndroidEntryPoint
 class ShowNoteFragment : Fragment() {
 
     private lateinit var binding: FragmentShowNoteBinding
     private lateinit var args: ShowNoteFragmentArgs
-    private val viewModel: ShowNoteViewModel by viewModels()
-
+    private val noteViewModel: ShowNoteViewModel by viewModels()
     private var inEditMode = false
+
     private lateinit var oldTitle: String
 
 
     override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
         binding = FragmentShowNoteBinding.inflate(layoutInflater)
+        binding.viewModel = noteViewModel
+        binding.lifecycleOwner = this
         args = ShowNoteFragmentArgs.fromBundle(requireArguments())
         return binding.root
     }
@@ -45,42 +46,30 @@ class ShowNoteFragment : Fragment() {
     private fun initListeners() {
         with(binding) {
             editSave.setOnClickListener {
-                if (!inEditMode) {
-                    editSave.setImageResource(R.drawable.ic_baseline_check_24)
 
-                    noteTitle.isEnabled = true
-                    noteContent.isEnabled = true
-                    delete.isEnabled = false
-                    inEditMode = true
+                editSave.setImageResource(
+                    if (inEditMode) R.drawable.ic_baseline_edit_24 else
+                        R.drawable.ic_baseline_check_24
+                )
 
-                } else {
-                    editSave.setImageResource(R.drawable.ic_baseline_edit_24)
+                noteTitle.isEnabled = !inEditMode
+                noteContent.isEnabled = !inEditMode
+                delete.isEnabled = inEditMode
 
-                    delete.isEnabled = true
-                    noteTitle.isEnabled = false
-                    noteContent.isEnabled = false
-
-                    CoroutineScope(Dispatchers.IO).launch {
-
-                        withContext(this.coroutineContext) {
-                            viewModel.updateNote(
-                                requireContext(),
-                                oldTitle,
-                                Note(noteTitle.stringContent(), noteContent.stringContent())
-                            )
-                        }
-
-                        lifecycleScope.launch {
-                            oldTitle = noteTitle.text.toString()
-                            inEditMode = false
-                        }
+                if (inEditMode) {
+                    lifecycleScope.launch {
+                        withContext(Dispatchers.IO) { noteViewModel.updateNote(oldTitle) }
+                        oldTitle = noteTitle.text.toString()
+                        inEditMode = false
                     }
+                } else {
+                    inEditMode = true
                 }
             }
 
             delete.setOnClickListener {
                 lifecycleScope.launch {
-                    viewModel.deleteNote(requireContext(), noteTitle.stringContent())
+                    noteViewModel.deleteNote(noteTitle.stringContent())
                     findNavController().navigateUp()
                 }
             }
@@ -91,10 +80,10 @@ class ShowNoteFragment : Fragment() {
         val note: Note = args.note
         oldTitle = note.noteTitle
         with(binding) {
-            noteTitle.setText(note.noteTitle)
-            noteContent.setText(note.noteContent)
-            noteTitle.isEnabled = false
-            noteContent.isEnabled = false
+            noteViewModel.noteTitle.postValue(note.noteTitle)
+            noteViewModel.noteBody.postValue(note.noteContent)
+            noteTitle.isEnabled = inEditMode
+            noteContent.isEnabled = inEditMode
         }
     }
 }

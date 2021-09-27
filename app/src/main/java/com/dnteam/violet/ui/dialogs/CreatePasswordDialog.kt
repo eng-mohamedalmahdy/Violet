@@ -1,28 +1,39 @@
 package com.dnteam.violet.ui.dialogs
 
-import android.app.Dialog
-import android.content.Context
 import android.os.Bundle
-import android.widget.EditText
-import android.widget.ImageButton
-import com.dnteam.violet.R
-import com.dnteam.violet.domain.setPassword
+import android.view.ViewGroup
+import androidx.fragment.app.DialogFragment
+import androidx.navigation.fragment.findNavController
+import com.dnteam.violet.data.sharedpreference.setPassword
+import com.dnteam.violet.databinding.DialogCreatePasswordBinding
+import com.dnteam.violet.domain.stringContent
+import android.view.LayoutInflater
+import android.view.View
 
-class CreatePasswordDialog(context: Context) : Dialog(context) {
+class CreatePasswordDialog : DialogFragment() {
 
-    private lateinit var password: EditText
-    private lateinit var save: ImageButton
+    private lateinit var binding: DialogCreatePasswordBinding
 
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.dialog_create_password)
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?, instance: Bundle?
+    ): View {
+        binding = DialogCreatePasswordBinding.inflate(layoutInflater)
 
-        password = findViewById(R.id.password)
-        save = findViewById(R.id.confirm_button)
-        save.setOnClickListener {
-            context.setPassword(password.text.toString())
-            hide()
+        with(binding) {
+            confirmButton.setOnClickListener {
+                context?.setPassword(password.stringContent())
+                findNavController().navigateUp()
+            }
         }
+        return binding.root
+    }
+
+    override fun onStart() {
+        super.onStart()
+        dialog?.window?.setLayout(
+            ViewGroup.LayoutParams.MATCH_PARENT,
+            ViewGroup.LayoutParams.WRAP_CONTENT
+        )
     }
 }

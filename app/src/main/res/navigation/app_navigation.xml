@@ -36,6 +36,12 @@
             app:destination="@id/addSecretNoteFragment"
             app:enterAnim="@anim/zoom_in"
             app:popExitAnim="@anim/zoom_out" />
+        <action
+            android:id="@+id/action_homeFragment_to_titlesDialog"
+            app:destination="@id/titlesDialog" />
+        <action
+            android:id="@+id/action_homeFragment_to_createPasswordDialog"
+            app:destination="@id/createPasswordDialog" />
     </fragment>
     <fragment
         android:id="@+id/visitNotesFragment"
@@ -53,4 +59,14 @@
         android:name="com.dnteam.violet.ui.fragments.addnote.AddSecretNoteFragment"
         android:label="AddSecretNoteFragment"
         tools:layout="@layout/fragment_add_secret_note" />
+    <dialog
+        android:id="@+id/titlesDialog"
+        android:name="com.dnteam.violet.ui.dialogs.titlesdialog.TitlesDialog"
+        android:label="TitlesDialog"
+        tools:layout="@layout/dialog_keys_list" />
+    <dialog
+        android:id="@+id/createPasswordDialog"
+        android:name="com.dnteam.violet.ui.dialogs.CreatePasswordDialog"
+        android:label="CreatePasswordDialog"
+        tools:layout="@layout/dialog_create_password" />
 </navigation>

@@ -3,6 +3,7 @@
     package="com.dnteam.violet">
 
     <application
+        android:name=".ui.VioletApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -10,16 +11,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name="com.dnteam.MainActivity">
+        <activity android:name=".ui.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".ui.fragments.shownote.ShowNoteFragment" />
-        <activity android:name=".ui.fragments.addnote.AddSecretNoteFragment" />
 
     </application>
 

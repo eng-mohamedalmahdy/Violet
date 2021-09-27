@@ -14,7 +14,7 @@
         android:background="@color/c_pink_ffeef4"
         tools:context=".ui.fragments.home.HomeFragment">
 
-        <ImageButton
+        <com.dnteam.violet.ui.views.MovableButton
             android:id="@+id/bt_secret_key"
             android:elevation="@dimen/_1sdp"
             android:layout_width="@dimen/_30sdp"
@@ -79,7 +79,7 @@
             android:layout_marginEnd="@dimen/_16sdp"
             android:background="@drawable/rounded_drawable"
             android:src="@drawable/ic_baseline_search_24"
-            android:tint="@color/c_pink_b5076b"
+            app:tint="@color/c_pink_b5076b"
             app:iconTint="@color/c_pink_b5076b"
             app:layout_constraintBottom_toBottomOf="@id/title_container"
             app:layout_constraintEnd_toEndOf="parent"

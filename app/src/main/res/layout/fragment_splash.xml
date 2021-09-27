@@ -28,8 +28,8 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="بنفسچ"
             android:fontFamily="@font/kufi"
+            android:text="بنفسچ"
             android:textAlignment="center"
             android:textColor="@color/c_purple_5c2a9d"
             android:textSize="@dimen/_56sdp"

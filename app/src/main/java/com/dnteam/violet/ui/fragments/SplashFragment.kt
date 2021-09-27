@@ -14,7 +14,9 @@ class SplashFragment : Fragment() {
 
     private lateinit var binding: FragmentSplashBinding
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
+    ): View {
         binding = FragmentSplashBinding.inflate(layoutInflater)
         return binding.root
     }
@@ -22,18 +24,15 @@ class SplashFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.flowerAnimation.addAnimatorListener(object : Animator.AnimatorListener {
-            override fun onAnimationStart(animation: Animator) {
-            }
+            override fun onAnimationStart(animation: Animator) {}
 
             override fun onAnimationEnd(animation: Animator) {
                 findNavController().navigate(SplashFragmentDirections.actionSplashFragmentToHomeFragment())
             }
 
-            override fun onAnimationCancel(animation: Animator) {
-            }
+            override fun onAnimationCancel(animation: Animator) {}
 
-            override fun onAnimationRepeat(animation: Animator) {
-            }
+            override fun onAnimationRepeat(animation: Animator) {}
         })
     }
 }
