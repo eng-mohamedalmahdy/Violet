@@ -7,14 +7,14 @@
 
         <variable
             name="viewModel"
-            type="com.dnteam.violet.ui.fragments.shownote.ShowNoteViewModel" />
+            type="com.dnteam.violet.ui.shownote.ShowNoteViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/c_sugar_f1ebbb"
-        tools:context=".ui.fragments.shownote.ShowNoteFragment">
+        tools:context=".ui.shownote.ShowNoteFragment">
 
 
         <View

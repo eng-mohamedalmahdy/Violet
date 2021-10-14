@@ -1,4 +1,4 @@
-package com.dnteam.violet.ui.dialogs.titlesdialog
+package com.dnteam.violet.ui.notestitles.titlesdialog
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel

@@ -96,6 +96,9 @@ dependencies {
 
     implementation 'com.github.mreram:showcaseview:1.4.0'
 
+    implementation "androidx.datastore:datastore:1.0.0"
+
+
 
 }
 repositories {

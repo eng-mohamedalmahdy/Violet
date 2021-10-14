@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/c_pink_ffeef4"
-        tools:context=".ui.fragments.home.HomeFragment">
+        tools:context=".ui.home.HomeFragment">
 
         <com.dnteam.violet.ui.views.MovableButton
             android:id="@+id/bt_secret_key"

@@ -1,4 +1,4 @@
-package com.dnteam.violet.ui.fragments.addnote
+package com.dnteam.violet.ui.addnote
 
 import android.app.Application
 import android.database.sqlite.SQLiteConstraintException

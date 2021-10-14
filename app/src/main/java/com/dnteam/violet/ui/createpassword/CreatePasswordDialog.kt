@@ -1,4 +1,4 @@
-package com.dnteam.violet.ui.dialogs
+package com.dnteam.violet.ui.createpassword
 
 import android.os.Bundle
 import android.view.ViewGroup

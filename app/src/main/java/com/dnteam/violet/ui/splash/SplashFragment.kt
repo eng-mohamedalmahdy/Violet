@@ -1,4 +1,4 @@
-package com.dnteam.violet.ui.fragments
+package com.dnteam.violet.ui.splash
 
 import android.animation.Animator
 import android.os.Bundle

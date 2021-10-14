@@ -1,4 +1,4 @@
-package com.dnteam.violet.ui.fragments.shownote
+package com.dnteam.violet.ui.shownote
 
 import android.app.Application
 import androidx.lifecycle.*

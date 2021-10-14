@@ -1,4 +1,4 @@
-package com.dnteam.violet.ui.fragments.home
+package com.dnteam.violet.ui.home
 
 import android.app.Activity
 import com.dnteam.violet.R

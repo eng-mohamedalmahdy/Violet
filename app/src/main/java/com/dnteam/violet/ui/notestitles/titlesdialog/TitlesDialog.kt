@@ -1,17 +1,17 @@
-package com.dnteam.violet.ui.dialogs.titlesdialog
+package com.dnteam.violet.ui.notestitles.titlesdialog
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.viewModels
-import androidx.recyclerview.widget.LinearLayoutManager
-import com.dnteam.violet.ui.adapters.KeysListAdapter
-import com.dnteam.violet.data.sharedpreference.getPassword
 import com.dnteam.violet.databinding.DialogKeysListBinding
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.*
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.dnteam.violet.data.sharedpreference.getPassword
+import com.dnteam.violet.ui.notestitles.KeysListAdapter
 
 @AndroidEntryPoint
 class TitlesDialog : DialogFragment() {

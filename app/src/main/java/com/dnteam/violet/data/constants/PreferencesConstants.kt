@@ -6,4 +6,5 @@ object PreferencesConstants {
     const val PREFERENCE_NAME = "VIOLET"
     const val PASSWORD_KEY = "PASSWORD"
     const val FIRST_TIME_HOME = "FIRST_TIME_HOME"
+    const val FIRST_TIME_ADD_NOTE = "FIRST_TIME_ADD_NOTE"
 }

@@ -5,6 +5,7 @@ import android.content.SharedPreferences
 import androidx.security.crypto.EncryptedSharedPreferences
 import androidx.security.crypto.MasterKey
 import com.dnteam.violet.data.constants.PreferencesConstants
+import com.dnteam.violet.data.constants.PreferencesConstants.FIRST_TIME_ADD_NOTE
 import com.dnteam.violet.data.constants.PreferencesConstants.FIRST_TIME_HOME
 import com.dnteam.violet.data.constants.PreferencesConstants.PASSWORD_KEY
 
@@ -76,3 +77,21 @@ fun Context.isFirstTimeHome() = EncryptedSharedPreferences.create(
     EncryptedSharedPreferences.PrefKeyEncryptionScheme.AES256_SIV,
     EncryptedSharedPreferences.PrefValueEncryptionScheme.AES256_GCM
 ).getBoolean(FIRST_TIME_HOME, true)
+
+
+fun Context.setFirstTimeAddNote(firstTime: Boolean) =
+    EncryptedSharedPreferences.create(
+        this,
+        "passwords",
+        getMasterKey(),
+        EncryptedSharedPreferences.PrefKeyEncryptionScheme.AES256_SIV,
+        EncryptedSharedPreferences.PrefValueEncryptionScheme.AES256_GCM
+    ).edit().putBoolean(FIRST_TIME_ADD_NOTE, firstTime)
+
+fun Context.isFirstTimeAddNote() = EncryptedSharedPreferences.create(
+    this,
+    "passwords",
+    getMasterKey(),
+    EncryptedSharedPreferences.PrefKeyEncryptionScheme.AES256_SIV,
+    EncryptedSharedPreferences.PrefValueEncryptionScheme.AES256_GCM
+).getBoolean(FIRST_TIME_ADD_NOTE, true)

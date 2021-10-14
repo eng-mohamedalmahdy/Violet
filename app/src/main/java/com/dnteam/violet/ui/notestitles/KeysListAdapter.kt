@@ -1,4 +1,4 @@
-package com.dnteam.violet.ui.adapters
+package com.dnteam.violet.ui.notestitles
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

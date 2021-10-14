@@ -1,4 +1,4 @@
-package com.dnteam.violet.ui.fragments.addnote
+package com.dnteam.violet.ui.addnote
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -33,6 +33,7 @@ class AddSecretNoteFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initListeners()
+        AddNoteGuideViews(binding, requireActivity()).showAddNoteGuide { }
     }
 
     private fun initListeners() {
