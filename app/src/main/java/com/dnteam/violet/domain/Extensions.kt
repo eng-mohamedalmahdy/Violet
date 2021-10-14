@@ -6,8 +6,9 @@ import android.content.Context
 import android.view.View
 import android.widget.EditText
 import android.widget.Toast
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MediatorLiveData
+import smartdevelop.ir.eram.showcaseviewlib.GuideView
+import kotlin.reflect.KFunction1
 
 fun EditText.stringContent() = this.text.toString()
 
@@ -32,3 +33,5 @@ fun Context.copyToClipBoard(text: String) {
     val clip = ClipData.newPlainText("${applicationInfo.name} Clip", text)
     clipboard.setPrimaryClip(clip)
 }
+
+

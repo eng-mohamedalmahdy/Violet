@@ -29,7 +29,7 @@
             app:popExitAnim="@anim/zoom_out">
             <argument
                 android:name="note"
-                app:argType="com.dnteam.violet.models.Note" />
+                app:argType="com.dnteam.violet.data.models.Note" />
         </action>
         <action
             android:id="@+id/action_homeFragment_to_addSecretNoteFragment"
@@ -52,7 +52,7 @@
 
         <argument
             android:name="note"
-            app:argType="com.dnteam.violet.models.Note" />
+            app:argType="com.dnteam.violet.data.models.Note" />
     </fragment>
     <fragment
         android:id="@+id/addSecretNoteFragment"

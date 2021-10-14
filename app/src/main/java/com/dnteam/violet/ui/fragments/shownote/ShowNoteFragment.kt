@@ -10,8 +10,8 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.dnteam.violet.R
 import com.dnteam.violet.databinding.FragmentShowNoteBinding
+import com.dnteam.violet.data.models.Note
 import com.dnteam.violet.domain.stringContent
-import com.dnteam.violet.models.Note
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.*
 

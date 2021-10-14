@@ -10,5 +10,6 @@
     <string name="key">المفتاح</string>
     <string name="copied">تم النقل الى الحافظة</string>
     <string name="create_password">قم بانشاء كلمة المرور</string>
+    <string name="move_key_guide_title">Move the key</string>
 
 </resources>

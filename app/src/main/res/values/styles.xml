@@ -8,4 +8,8 @@
         <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
     </style>
 
+    <style name="pink_text">
+        <item name="fontStyle">normal</item>
+    </style>
+
 </resources>

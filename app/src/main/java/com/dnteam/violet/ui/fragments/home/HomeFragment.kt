@@ -7,12 +7,9 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.dnteam.violet.R
-import com.dnteam.violet.data.sharedpreference.getKeyLocation
-import com.dnteam.violet.data.sharedpreference.getPassword
-import com.dnteam.violet.data.sharedpreference.setKeyLocation
 import com.dnteam.violet.databinding.FragmentHomeBinding
 import com.dnteam.violet.domain.*
-import com.dnteam.violet.models.Note
+import com.dnteam.violet.data.models.Note
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.*
 
@@ -34,6 +31,16 @@ class HomeFragment : Fragment() {
         initListeners()
         setupKeyButton()
         showDialogIfNoPassword()
+        showGuide()
+    }
+
+    private fun showGuide() {
+        viewModel.isShowingGuide.observe(viewLifecycleOwner) {
+            if (it) {
+                val homeGuideViews = HomeGuideViews(binding, requireActivity())
+                homeGuideViews.startGuide { viewModel.firstTimeHome.value = false }
+            }
+        }
     }
 
     private fun initListeners() {
@@ -49,11 +56,9 @@ class HomeFragment : Fragment() {
         }
     }
 
-
     private fun clickAdd() =
         findNavController()
             .navigate(HomeFragmentDirections.actionHomeFragmentToAddSecretNoteFragment())
-
 
     private fun clickSearch() {
         with(binding) {

@@ -9,4 +9,12 @@
     <string name="key">key</string>
     <string name="copied">Copied to Clipboard</string>
     <string name="create_password">Create Password</string>
+    <string name="move_key_guide_title">Move the key</string>
+    <string name="move_key_guide_content">Place the key in safe place it will be hidden later</string>
+    <string name="add_note_title">"Click here "</string>
+    <string name="add_note">Click here</string>
+    <string name="add_note_body">To add new note</string>
+    <string name="search_note_body">To search for note</string>
+    <string name="search_note_title">Type the not title here</string>
+    <string name="click_to_search">Click here to search</string>
 </resources>

@@ -1,4 +1,4 @@
-package com.dnteam.violet.models
+package com.dnteam.violet.data.models
 
 import android.os.Parcel
 import android.os.Parcelable

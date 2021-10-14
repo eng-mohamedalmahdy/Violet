@@ -1,7 +1,7 @@
 package com.dnteam.violet.data.database
 
 import androidx.room.*
-import com.dnteam.violet.models.Note
+import com.dnteam.violet.data.models.Note
 
 @Dao
 interface SecretNotesDao {

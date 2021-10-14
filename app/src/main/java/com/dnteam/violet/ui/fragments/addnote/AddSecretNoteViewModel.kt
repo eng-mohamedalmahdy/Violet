@@ -1,13 +1,10 @@
 package com.dnteam.violet.ui.fragments.addnote
 
 import android.app.Application
-import android.content.Context
 import android.database.sqlite.SQLiteConstraintException
 import androidx.lifecycle.AndroidViewModel
-import androidx.lifecycle.ViewModel
-import com.dnteam.violet.data.database.NotesDatabase
 import com.dnteam.violet.data.database.SecretNotesDao
-import com.dnteam.violet.models.Note
+import com.dnteam.violet.data.models.Note
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
