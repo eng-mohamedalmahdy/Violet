@@ -9,11 +9,13 @@ import com.dnteam.violet.databinding.DialogCreatePasswordBinding
 import com.dnteam.violet.domain.stringContent
 import android.view.LayoutInflater
 import android.view.View
+import androidx.fragment.app.activityViewModels
+import com.dnteam.violet.ui.home.HomeViewModel
 
 class CreatePasswordDialog : DialogFragment() {
 
     private lateinit var binding: DialogCreatePasswordBinding
-
+    private val viewModel: HomeViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, instance: Bundle?
@@ -24,6 +26,7 @@ class CreatePasswordDialog : DialogFragment() {
             confirmButton.setOnClickListener {
                 context?.setPassword(password.stringContent())
                 findNavController().navigateUp()
+                viewModel.isShowingGuide.value = true
             }
         }
         return binding.root

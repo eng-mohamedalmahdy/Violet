@@ -22,7 +22,6 @@ class ShowNoteFragment : Fragment() {
     private lateinit var args: ShowNoteFragmentArgs
     private val noteViewModel: ShowNoteViewModel by viewModels()
     private var inEditMode = false
-
     private lateinit var oldTitle: String
 
 
@@ -40,6 +39,12 @@ class ShowNoteFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         initListeners()
         initViewsData()
+        if (noteViewModel.firstTime.value != false) ShowNoteGuide(
+            binding,
+            requireActivity()
+        ).showOpenedNotesGuide {
+            noteViewModel.firstTime.value = false
+        }
     }
 
 
@@ -47,14 +52,14 @@ class ShowNoteFragment : Fragment() {
         with(binding) {
             editSave.setOnClickListener {
 
+                noteTitle.isEnabled = !inEditMode
+                noteContent.isEnabled = !inEditMode
+                delete.isEnabled = inEditMode
+
                 editSave.setImageResource(
                     if (inEditMode) R.drawable.ic_baseline_edit_24 else
                         R.drawable.ic_baseline_check_24
                 )
-
-                noteTitle.isEnabled = !inEditMode
-                noteContent.isEnabled = !inEditMode
-                delete.isEnabled = inEditMode
 
                 if (inEditMode) {
                     lifecycleScope.launch {

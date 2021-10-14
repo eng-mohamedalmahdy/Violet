@@ -3,7 +3,7 @@ package com.dnteam.violet.ui.home
 import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
+import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.dnteam.violet.R
@@ -13,11 +13,12 @@ import com.dnteam.violet.data.models.Note
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.*
 
+
 @AndroidEntryPoint
 class HomeFragment : Fragment() {
 
     private lateinit var binding: FragmentHomeBinding
-    private val viewModel: HomeViewModel by viewModels()
+    private val viewModel: HomeViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
@@ -36,9 +37,13 @@ class HomeFragment : Fragment() {
 
     private fun showGuide() {
         viewModel.isShowingGuide.observe(viewLifecycleOwner) {
+
             if (it) {
                 val homeGuideViews = HomeGuideViews(binding, requireActivity())
-                homeGuideViews.startGuide { viewModel.firstTimeHome.value = false }
+                homeGuideViews.startGuide {
+                    viewModel.firstTimeHome.value = false
+                    viewModel.isShowingGuide.value = false
+                }
             }
         }
     }
@@ -71,7 +76,7 @@ class HomeFragment : Fragment() {
     }
 
     private fun clickHiddenKey() {
-        if (binding.btSecretKey.alpha == 1f) {
+        if (binding.btSecretKey.alpha == 1f && findNavController().currentDestination?.id == R.id.homeFragment) {
             findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToTitlesDialog())
         } else {
             binding.btSecretKey.animate().setDuration(100).alpha(1f).start()

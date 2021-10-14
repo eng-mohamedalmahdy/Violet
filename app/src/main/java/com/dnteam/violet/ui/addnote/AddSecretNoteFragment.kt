@@ -33,7 +33,12 @@ class AddSecretNoteFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initListeners()
-        AddNoteGuideViews(binding, requireActivity()).showAddNoteGuide { }
+        if (viewModel.firstTimeHome.value != false) AddNoteGuideViews(
+            binding,
+            requireActivity()
+        ).showAddNoteGuide {
+            viewModel.firstTimeHome.value = false
+        }
     }
 
     private fun initListeners() {

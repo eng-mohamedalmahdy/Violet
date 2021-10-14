@@ -1,14 +1,18 @@
 package com.dnteam.violet.domain
 
+import android.app.Activity
 import android.content.ClipData
 import android.content.ClipboardManager
 import android.content.Context
+import android.content.ContextWrapper
 import android.view.View
 import android.widget.EditText
 import android.widget.Toast
-import androidx.lifecycle.MediatorLiveData
+import com.dnteam.violet.R
 import smartdevelop.ir.eram.showcaseviewlib.GuideView
-import kotlin.reflect.KFunction1
+import smartdevelop.ir.eram.showcaseviewlib.config.DismissType
+import smartdevelop.ir.eram.showcaseviewlib.config.Gravity
+
 
 fun EditText.stringContent() = this.text.toString()
 
@@ -34,4 +38,25 @@ fun Context.copyToClipBoard(text: String) {
     clipboard.setPrimaryClip(clip)
 }
 
+fun View.guide(message: String, onGuide: () -> Unit) =
+    GuideView.Builder(getActivity(context)).apply {
+        setTitle(message)
+        setDismissType(DismissType.anywhere)
+        setTargetView(this@guide)
+        setGravity(Gravity.center)
+        setGuideListener { onGuide() }
+    }.build().show()
 
+
+fun getActivity(context: Context?): Activity? {
+    if (context == null) {
+        return null
+    } else if (context is ContextWrapper) {
+        return if (context is Activity) {
+            context
+        } else {
+            getActivity(context.baseContext)
+        }
+    }
+    return null
+}

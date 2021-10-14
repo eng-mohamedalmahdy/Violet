@@ -9,6 +9,7 @@ import com.dnteam.violet.data.sharedpreference.*
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
+
 @HiltViewModel
 class HomeViewModel @Inject constructor(application: Application) : AndroidViewModel(application) {
 
@@ -20,17 +21,17 @@ class HomeViewModel @Inject constructor(application: Application) : AndroidViewM
 
     val firstTimeHome = MutableLiveData(application.isFirstTimeHome())
 
-    val isShowingGuide = liveData {
-        emit(
-            application.isFirstTimeHome()
-                    && application.getPassword().isNotEmpty()
-        )
-    }
+    val isShowingGuide = MutableLiveData(
+        application.isFirstTimeHome()
+                && application.getPassword().isNotEmpty()
+    )
 
 
     init {
         keyLocation.observeForever { application.setKeyLocation(it) }
-        firstTimeHome.observeForever { application.setFirstTimeHome(it) }
+        firstTimeHome.observeForever {
+            application.setFirstTimeHome(it)
+        }
     }
 
     suspend fun getNote(title: String) = notesDao.getNote(title)

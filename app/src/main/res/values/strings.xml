@@ -20,4 +20,7 @@
     <string name="type_note_title">Type the note title</string>
     <string name="type_note_content">Type note content</string>
     <string name="click_to_save">Click here to save</string>
+    <string name="click_to_delete">Click here to delete the note</string>
+    <string name="click_to_edit_or_update">Edit or Update the notes</string>
+    <string name="click_to_add_note">Click here to add note</string>
 </resources>

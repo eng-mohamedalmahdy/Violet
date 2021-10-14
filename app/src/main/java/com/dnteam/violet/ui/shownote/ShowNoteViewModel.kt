@@ -3,6 +3,8 @@ package com.dnteam.violet.ui.shownote
 import android.app.Application
 import androidx.lifecycle.*
 import com.dnteam.violet.data.database.SecretNotesDao
+import com.dnteam.violet.data.sharedpreference.isFirstTimeOpenNote
+import com.dnteam.violet.data.sharedpreference.setFirstTimeOpenNote
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -17,7 +19,11 @@ class ShowNoteViewModel @Inject constructor(application: Application) :
 
     val noteTitle: MutableLiveData<String> = MutableLiveData()
     val noteBody: MutableLiveData<String> = MutableLiveData()
+    val firstTime = MutableLiveData(application.isFirstTimeOpenNote())
 
+    init {
+        firstTime.observeForever { application.setFirstTimeOpenNote(it) }
+    }
 
     fun updateNote(oldTitle: String) =
         viewModelScope.launch {
