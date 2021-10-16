@@ -12,35 +12,59 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/c_pink_ffeef4"
+        android:layoutDirection="ltr"
         tools:context=".ui.home.HomeFragment">
-
-        <com.dnteam.violet.ui.views.MovableButton
-            android:id="@+id/bt_secret_key"
-            android:elevation="@dimen/_1sdp"
-            android:layout_width="@dimen/_30sdp"
-            android:layout_height="@dimen/_30sdp"
-            android:background="@drawable/key"
-            android:scaleType="fitCenter"
-            android:src="@drawable/key"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
             android:id="@+id/background"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:contentDescription="background"
             android:scaleType="fitCenter"
             android:src="@drawable/unircorn" />
+
+        <com.dnteam.violet.ui.views.MovableButton
+            android:id="@+id/bt_secret_key"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:background="@drawable/key"
+            android:elevation="@dimen/_1sdp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/key"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <ImageButton
+            android:id="@+id/language"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_8sdp"
+            android:src="@drawable/ic_earth_globe_geography_svgrepo_com"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Spinner
+
+            android:id="@+id/language_spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:entries="@array/languages"
+            android:spinnerMode="dialog"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/add_note_fab"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:contentDescription="@string/add_note"
+            app:backgroundTint="@color/c_pink_b5076b"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:srcCompat="@drawable/ic_baseline_add_24"
             app:tint="@color/c_pink_ffeef4"
-            app:backgroundTint="@color/c_pink_b5076b"
             app:useCompatPadding="true" />
 
         <com.google.android.material.textfield.TextInputLayout
@@ -79,11 +103,11 @@
             android:layout_marginEnd="@dimen/_16sdp"
             android:background="@drawable/rounded_drawable"
             android:src="@drawable/ic_baseline_search_24"
-            app:tint="@color/c_pink_b5076b"
             app:iconTint="@color/c_pink_b5076b"
             app:layout_constraintBottom_toBottomOf="@id/title_container"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@id/title_container" />
+            app:layout_constraintTop_toTopOf="@id/title_container"
+            app:tint="@color/c_pink_b5076b" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

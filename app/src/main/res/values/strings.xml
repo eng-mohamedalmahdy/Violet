@@ -23,4 +23,5 @@
     <string name="click_to_delete">Click here to delete the note</string>
     <string name="click_to_edit_or_update">Edit or Update the notes</string>
     <string name="click_to_add_note">Click here to add note</string>
+    <string name="select_language_here">Select language here</string>
 </resources>

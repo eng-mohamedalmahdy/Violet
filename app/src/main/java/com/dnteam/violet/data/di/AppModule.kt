@@ -1,7 +1,7 @@
 package com.dnteam.violet.data.di
 
-import android.app.Application
 import android.content.Context
+import com.akexorcist.localizationactivity.ui.LocalizationApplication
 import com.dnteam.violet.data.database.NotesDatabase
 import com.dnteam.violet.data.database.SecretNotesDao
 import dagger.Module
@@ -10,15 +10,18 @@ import dagger.hilt.InstallIn
 import dagger.hilt.android.HiltAndroidApp
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
+import java.util.*
 import javax.inject.Singleton
 
 @HiltAndroidApp
-class VioletApplication : Application()
+class VioletApplication : LocalizationApplication() {
+    override fun getDefaultLanguage(base: Context): Locale = Locale.getDefault()
+}
 
 
 @Module
 @InstallIn(SingletonComponent::class)
-object AppModule{
+object AppModule {
     @Singleton
     @Provides
     fun provideNotesDatabase(@ApplicationContext context: Context): NotesDatabase =

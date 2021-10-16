@@ -25,10 +25,7 @@ class AddNoteGuideViews(val binding: FragmentAddSecretNoteBinding, val activity:
 
     fun showAddNoteGuide(onGuide: () -> Unit) {
         showNoteTitleGuide {
-            showNoteContentGuide {
                 showNoteSaveGuide(onGuide)
-            }
         }
     }
-
 }

@@ -98,7 +98,9 @@ dependencies {
 
     implementation("androidx.datastore:datastore-preferences:1.0.0")
 
+    implementation 'com.akexorcist:localization:1.2.10'
 
+    implementation 'com.jakewharton:process-phoenix:2.1.2'
 
 }
 repositories {

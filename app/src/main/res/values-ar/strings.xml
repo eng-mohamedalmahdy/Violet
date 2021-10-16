@@ -11,5 +11,19 @@
     <string name="copied">تم النقل الى الحافظة</string>
     <string name="create_password">قم بانشاء كلمة المرور</string>
     <string name="move_key_guide_title">Move the key</string>
+    <string name="move_key_guide_content">ضع المفتاح في مكان آمن سوف يختفي لاحقاً</string>
+    <string name="add_note_title">اضغط هنا</string>
+    <string name="add_note">اضغط هنا</string>
+    <string name="add_note_body">لإضافة ملحوظة جديدة</string>
+    <string name="search_note_body">للبحث عن ملحوظتك</string>
+    <string name="search_note_title">اكتب العنوان هنا</string>
+    <string name="click_to_search">اضغط هنا للبحث</string>
+    <string name="type_note_title">اكتب العنوان هنا</string>
+    <string name="type_note_content">اكتب محتوى الملحوظة</string>
+    <string name="click_to_save">اضغط هنا للحفظ</string>
+    <string name="click_to_delete">اضغط هنا للحذف</string>
+    <string name="click_to_edit_or_update">تعديل او تحديث الملحوظة</string>
+    <string name="click_to_add_note">اضغط هنا لإضافة ملحوظة جديدة</string>
+    <string name="select_language_here">اختر اللغة هنا</string>
 
 </resources>
