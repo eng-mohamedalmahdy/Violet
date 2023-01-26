@@ -15,7 +15,7 @@
     <string name="add_note">Click here</string>
     <string name="add_note_body">To add new note</string>
     <string name="search_note_body">To search for note</string>
-    <string name="search_note_title">Type the not title here</string>
+    <string name="search_note_title">Type the note title here</string>
     <string name="click_to_search">Click here to search</string>
     <string name="type_note_title">Type the note title</string>
     <string name="type_note_content">Type note content</string>
