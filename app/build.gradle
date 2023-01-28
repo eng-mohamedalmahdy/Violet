@@ -6,15 +6,23 @@ apply plugin: 'androidx.navigation.safeargs.kotlin'
 
 
 android {
+    signingConfigs {
+        release {
+            storePassword '0114815267'
+            keyAlias 'key0'
+            keyPassword '0114815267'
+            storeFile file('/Users/mohamedalmahdy/Developer/StudioProjects/engMahdyKeyStore.jks')
+        }
+    }
     compileSdkVersion 33
     buildToolsVersion "29.0.3"
 
     defaultConfig {
-        applicationId "com.dnteam.purble"
+        applicationId "com.lightfeather.violet"
         minSdkVersion 23
         targetSdkVersion 33
-        versionCode 1
-        versionName "1.0"
+        versionCode 2
+        versionName "1.1"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         javaCompileOptions {
@@ -31,6 +39,9 @@ android {
         release {
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+            applicationIdSuffix 'com.lightfeather.violet'
+            versionNameSuffix '2'
         }
     }
     compileOptions {

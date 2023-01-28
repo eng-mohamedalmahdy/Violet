@@ -7,7 +7,7 @@
 
         <variable
             name="viewModel"
-            type="com.dnteam.violet.ui.shownote.ShowNoteViewModel" />
+            type="com.lightfeather.violet.ui.shownote.ShowNoteViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

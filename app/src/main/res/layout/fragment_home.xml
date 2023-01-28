@@ -23,7 +23,7 @@
             android:scaleType="fitCenter"
             android:src="@drawable/unircorn" />
 
-        <com.dnteam.violet.ui.views.MovableButton
+        <com.lightfeather.violet.ui.views.MovableButton
             android:id="@+id/bt_secret_key"
             android:layout_width="@dimen/_30sdp"
             android:layout_height="@dimen/_30sdp"

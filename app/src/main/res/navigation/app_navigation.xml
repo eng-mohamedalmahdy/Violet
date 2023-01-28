@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/splashFragment"
-        android:name="com.dnteam.violet.ui.splash.SplashFragment"
+        android:name="com.lightfeather.violet.ui.splash.SplashFragment"
         android:label="SplashFragment"
         tools:layout="@layout/fragment_splash">
         <action
@@ -19,7 +19,7 @@
     </fragment>
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.dnteam.violet.ui.home.HomeFragment"
+        android:name="com.lightfeather.violet.ui.home.HomeFragment"
         android:label="HomeFragment"
         tools:layout="@layout/fragment_home">
         <action
@@ -29,7 +29,7 @@
             app:popExitAnim="@anim/zoom_out">
             <argument
                 android:name="note"
-                app:argType="com.dnteam.violet.data.models.Note" />
+                app:argType="com.lightfeather.violet.data.models.Note" />
         </action>
         <action
             android:id="@+id/action_homeFragment_to_addSecretNoteFragment"
@@ -45,28 +45,28 @@
     </fragment>
     <fragment
         android:id="@+id/visitNotesFragment"
-        android:name="com.dnteam.violet.ui.shownote.ShowNoteFragment"
+        android:name="com.lightfeather.violet.ui.shownote.ShowNoteFragment"
         android:label="VisitNotesFragment"
         app:enterAnim="@anim/zoom_in"
         tools:layout="@layout/fragment_show_note">
 
         <argument
             android:name="note"
-            app:argType="com.dnteam.violet.data.models.Note" />
+            app:argType="com.lightfeather.violet.data.models.Note" />
     </fragment>
     <fragment
         android:id="@+id/addSecretNoteFragment"
-        android:name="com.dnteam.violet.ui.addnote.AddSecretNoteFragment"
+        android:name="com.lightfeather.violet.ui.addnote.AddSecretNoteFragment"
         android:label="AddSecretNoteFragment"
         tools:layout="@layout/fragment_add_secret_note" />
     <dialog
         android:id="@+id/titlesDialog"
-        android:name="com.dnteam.violet.ui.notestitles.titlesdialog.TitlesDialog"
+        android:name="com.lightfeather.violet.ui.notestitles.titlesdialog.TitlesDialog"
         android:label="TitlesDialog"
         tools:layout="@layout/dialog_keys_list" />
     <dialog
         android:id="@+id/createPasswordDialog"
-        android:name="com.dnteam.violet.ui.createpassword.CreatePasswordDialog"
+        android:name="com.lightfeather.violet.ui.createpassword.CreatePasswordDialog"
         android:label="CreatePasswordDialog"
         tools:layout="@layout/dialog_create_password" />
 </navigation>
