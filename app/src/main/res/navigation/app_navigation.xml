@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/app_navigation"
-    app:startDestination="@id/splashFragment">
+    app:startDestination="@id/homeFragment">
 
     <fragment
         android:id="@+id/splashFragment"
@@ -14,6 +14,7 @@
             android:id="@+id/action_splashFragment_to_homeFragment"
             app:destination="@id/homeFragment"
             app:enterAnim="@anim/slide_in"
+            app:launchSingleTop="true"
             app:popUpTo="@+id/app_navigation"
             app:popUpToInclusive="true" />
     </fragment>
@@ -25,13 +26,14 @@
         <action
             android:id="@+id/action_homeFragment_to_visitNotesFragment"
             app:destination="@id/visitNotesFragment"
-            app:enterAnim="@anim/zoom_in"
-            app:popExitAnim="@anim/zoom_out">
+            app:popUpTo="@id/homeFragment">
             <argument
                 android:name="note"
                 app:argType="com.lightfeather.violet.data.models.Note" />
+
         </action>
         <action
+            app:popUpTo="@id/homeFragment"
             android:id="@+id/action_homeFragment_to_addSecretNoteFragment"
             app:destination="@id/addSecretNoteFragment"
             app:enterAnim="@anim/zoom_in"
@@ -40,6 +42,7 @@
             android:id="@+id/action_homeFragment_to_titlesDialog"
             app:destination="@id/titlesDialog" />
         <action
+            app:popUpTo="@id/homeFragment"
             android:id="@+id/action_homeFragment_to_createPasswordDialog"
             app:destination="@id/createPasswordDialog" />
     </fragment>

@@ -63,7 +63,9 @@ class ShowNoteFragment : Fragment() {
 
                 if (inEditMode) {
                     lifecycleScope.launch {
-                        withContext(Dispatchers.IO) { noteViewModel.updateNote(oldTitle) }
+                        withContext(Dispatchers.IO) {
+                            noteViewModel.updateNote(oldTitle)
+                        }
                         oldTitle = noteTitle.text.toString()
                         inEditMode = false
                     }
@@ -75,7 +77,9 @@ class ShowNoteFragment : Fragment() {
             delete.setOnClickListener {
                 lifecycleScope.launch {
                     noteViewModel.deleteNote(noteTitle.stringContent())
-                    findNavController().navigateUp()
+                    withContext(Dispatchers.Main) {
+                        findNavController().navigateUp()
+                    }
                 }
             }
         }

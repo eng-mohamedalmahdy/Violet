@@ -6,7 +6,7 @@
     <data>
         <variable
             name="viewModel"
-            type="com.lightfeather.violet.ui.nkotestitles.titlesdialog.TitlesDialogViewModel" />
+            type="com.lightfeather.violet.ui.notestitles.titlesdialog.TitlesDialogViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

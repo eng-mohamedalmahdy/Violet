@@ -3,7 +3,6 @@ package com.lightfeather.violet.ui.home
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
-import com.akexorcist.localizationactivity.ui.LocalizationActivity
 import com.lightfeather.violet.data.Languages
 import com.lightfeather.violet.data.database.SecretNotesDao
 import com.lightfeather.violet.data.sharedpreference.*
@@ -44,7 +43,6 @@ class HomeViewModel @Inject constructor(application: Application) : AndroidViewM
 
     fun setLanguage(position: Int, activity: MainActivity) {
         activity.setLanguage(Languages.languages[position])
-        ProcessPhoenix.triggerRebirth(getApplication())
     }
 
     fun getSelectedLanguage(activity: MainActivity): Int {

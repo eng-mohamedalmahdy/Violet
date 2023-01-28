@@ -1,6 +1,7 @@
 package com.lightfeather.violet.data.di
 
 import android.content.Context
+import androidx.appcompat.app.AppCompatDelegate
 import com.akexorcist.localizationactivity.ui.LocalizationApplication
 import com.lightfeather.violet.data.database.NotesDatabase
 import com.lightfeather.violet.data.database.SecretNotesDao
@@ -16,6 +17,11 @@ import javax.inject.Singleton
 @HiltAndroidApp
 class VioletApplication : LocalizationApplication() {
     override fun getDefaultLanguage(base: Context): Locale = Locale.getDefault()
+    override fun onCreate() {
+        super.onCreate()
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+
+    }
 }
 
 

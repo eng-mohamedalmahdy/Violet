@@ -1,21 +1,25 @@
 package com.lightfeather.violet.ui.home
 
 import android.os.Bundle
-import android.view.*
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import android.widget.AdapterView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
-import com.akexorcist.localizationactivity.ui.LocalizationActivity
 import com.lightfeather.violet.R
-import com.lightfeather.violet.databinding.FragmentHomeBinding
-import com.lightfeather.violet.domain.*
 import com.lightfeather.violet.data.models.Note
+import com.lightfeather.violet.databinding.FragmentHomeBinding
+import com.lightfeather.violet.domain.location
+import com.lightfeather.violet.domain.setLocation
+import com.lightfeather.violet.domain.stringContent
 import com.lightfeather.violet.ui.MainActivity
 import com.lightfeather.violet.ui.views.SpinnerOnItemSelectedListener
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.*
+import kotlinx.coroutines.async
+import kotlinx.coroutines.launch
 
 
 @AndroidEntryPoint
